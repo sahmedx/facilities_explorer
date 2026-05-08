@@ -148,3 +148,62 @@
   border-top: 1px solid var(--hairline);
   text-wrap: pretty;
 }
+
+/* ── Footnote marker (superscript ¹ + hover tooltip) ────────────────
+ * Used on the total-sqft cell to flag that the value is a weighted
+ * average throughout the year. The marker is keyboard-focusable so
+ * the tooltip is reachable without a pointer. */
+.footnoteMarker {
+  position: relative;
+  display: inline-block;
+  margin-left: 2px;
+  cursor: help;
+  outline: none;
+}
+
+.footnoteNumber {
+  display: inline-block;
+  vertical-align: super;
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--accent);
+  /* Cells use tabular-nums; the marker should look like a footnote, not data. */
+  font-feature-settings: normal;
+  font-variant-numeric: normal;
+  line-height: 1;
+}
+
+.footnoteMarker:focus-visible .footnoteNumber {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-radius: 2px;
+}
+
+.footnoteTooltip {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  right: 0;
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-md);
+  padding: 6px 10px;
+  font-family: var(--font-sans);
+  font-size: var(--t-small);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  text-align: left;
+  box-shadow: var(--elev-2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 120ms ease-out;
+  z-index: 10;
+}
+
+.footnoteMarker:hover .footnoteTooltip,
+.footnoteMarker:focus-visible .footnoteTooltip {
+  opacity: 1;
+}
