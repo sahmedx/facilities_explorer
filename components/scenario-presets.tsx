@@ -8,7 +8,7 @@ export type PresetName = keyof typeof presets;
 
 const PRESET_LABELS: Record<PresetName, { label: string; sub: string }> = {
   holdLine:     { label: "Baseline",       sub: "No expansion" },
-  expandToPlan: { label: "BAU growth",     sub: "HC-driven capacity model" },
+  expandToPlan: { label: "Expand to plan", sub: "HC-driven capacity model" },
   investAhead:  { label: "Invest ahead",   sub: "Build for future growth" },
 };
 

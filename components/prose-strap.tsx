@@ -5,8 +5,9 @@ export function ProseStrap() {
     <div className={styles.wrap}>
       <p className={styles.lede}>FY27 Facilities Plan</p>
       <p className={`${styles.body} balance`}>
-        Baseline assumes no incremental office space. BAU growth adds square
-        footage based on headcount growth, implying a $13M leasehold buildout.
+        Baseline assumes no incremental office space. Expand to plan
+        (headcount-driven growth) adds square footage, implying a $13M
+        leasehold buildout.
         Use the levers below, or click a preset, to compare densification, base
         case, and premium expansion paths. Numbers reconcile to the underlying
         Excel model at default settings.
