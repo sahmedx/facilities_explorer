@@ -74,7 +74,9 @@ export function DriverWaterfall({ current }: { current: Scenario }) {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <div>
+        <div className="section-index">
+          <span className="code-badge code-badge--dim">02 · WATERFALL</span>
+          <span className="section-index__rule" aria-hidden />
           <span className="label">Driver waterfall · FY26 → FY27</span>
         </div>
         <div className={styles.legend} aria-hidden>
@@ -334,9 +336,10 @@ export function WaterfallPlaceholder() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <div>
+        <div className="section-index">
+          <span className="code-badge code-badge--dim">02 · WATERFALL</span>
+          <span className="section-index__rule" aria-hidden />
           <span className="label">Driver waterfall · FY26 → FY27</span>
-          <p className={styles.sub}>Loading…</p>
         </div>
       </header>
       <div className={`${styles.chartWrap} ${styles.placeholder}`} />

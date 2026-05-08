@@ -14,17 +14,29 @@ const PLACEHOLDERS = [
 /** SSR placeholder — same shape as the live cards, used by the server page. */
 export function KpiCardsPlaceholder() {
   return (
-    <div className={styles.row}>
-      {PLACEHOLDERS.map(({ label, value, emphasis }) => (
-        <div
-          key={label}
-          className={`${styles.card} ${emphasis ? styles.emphasis : ""}`}
-        >
-          <div className="label">{label}</div>
-          <div className={`mono ${styles.value}`}>{value}</div>
-          <div className={`mono ${styles.delta}`}>±$0</div>
-        </div>
-      ))}
+    <div className={styles.wrap}>
+      <SectionIndex code="01 · KPIS" />
+      <div className={styles.row}>
+        {PLACEHOLDERS.map(({ label, value, emphasis }) => (
+          <div
+            key={label}
+            className={`${styles.card} ${emphasis ? styles.emphasis : ""}`}
+          >
+            <div className="label">{label}</div>
+            <div className={`mono ${styles.value}`}>{value}</div>
+            <div className={`mono ${styles.delta}`}>±$0</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function SectionIndex({ code }: { code: string }) {
+  return (
+    <div className={`section-index ${styles.head}`}>
+      <span className="code-badge code-badge--dim">{code}</span>
+      <span className="section-index__rule" aria-hidden />
     </div>
   );
 }
@@ -83,8 +95,10 @@ export function KpiCards({ base, current }: KpiCardsProps) {
   ];
 
   return (
-    <div className={styles.row}>
-      {cards.map(({ label, value, delta, emphasis, signFlipForDelta, fmt }) => {
+    <div className={styles.wrap}>
+      <SectionIndex code="01 · KPIS" />
+      <div className={styles.row}>
+        {cards.map(({ label, value, delta, emphasis, signFlipForDelta, fmt }) => {
         const cls = deltaClass(delta, { signFlipForDelta });
         const valueText =
           fmt === "money" ? fmtMoneyShort(value) : fmtMoneyFull(value);
@@ -106,6 +120,7 @@ export function KpiCards({ base, current }: KpiCardsProps) {
           </div>
         );
       })}
+      </div>
     </div>
   );
 }

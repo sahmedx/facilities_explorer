@@ -16,7 +16,11 @@ export function ThreeStmtTable({ current }: { current: Scenario }) {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <span className="label">Three-statement walk</span>
+        <div className="section-index">
+          <span className="code-badge code-badge--dim">04 · STATEMENTS</span>
+          <span className="section-index__rule" aria-hidden />
+          <span className="label">Three-statement walk</span>
+        </div>
         <span className={styles.sub}>FY26 actual · FY27 forecast · Δ</span>
       </header>
 
@@ -95,7 +99,11 @@ export function ThreeStmtPlaceholder() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <span className="label">Three-statement walk</span>
+        <div className="section-index">
+          <span className="code-badge code-badge--dim">04 · STATEMENTS</span>
+          <span className="section-index__rule" aria-hidden />
+          <span className="label">Three-statement walk</span>
+        </div>
         <span className={styles.sub}>FY26 actual · FY27 forecast · Δ</span>
       </header>
       <div className={styles.placeholder}>Loading…</div>

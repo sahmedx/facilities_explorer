@@ -43,7 +43,11 @@ export function BucketDetailTable({ current }: { current: Scenario }) {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <span className="label">Forecast detail by GL bucket</span>
+        <div className="section-index">
+          <span className="code-badge code-badge--dim">05 · DETAIL</span>
+          <span className="section-index__rule" aria-hidden />
+          <span className="label">Forecast detail by GL bucket</span>
+        </div>
         <span className={styles.sub}>FY26 actual · FY27 forecast · Δ — reactive to levers</span>
       </header>
 
@@ -132,7 +136,11 @@ export function BucketDetailPlaceholder() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <span className="label">Forecast detail by GL bucket</span>
+        <div className="section-index">
+          <span className="code-badge code-badge--dim">05 · DETAIL</span>
+          <span className="section-index__rule" aria-hidden />
+          <span className="label">Forecast detail by GL bucket</span>
+        </div>
         <span className={styles.sub}>FY26 actual · FY27 forecast · Δ</span>
       </header>
       <div className={styles.placeholder}>Loading…</div>

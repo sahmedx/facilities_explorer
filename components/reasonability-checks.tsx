@@ -25,7 +25,11 @@ export function ReasonabilityChecks({ current }: { current: Scenario }) {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <span className="label">Per-office unit economics</span>
+        <div className="section-index">
+          <span className="code-badge code-badge--dim">03 · REASONABILITY</span>
+          <span className="section-index__rule" aria-hidden />
+          <span className="label">Per-office unit economics</span>
+        </div>
       </header>
 
       <div className={styles.table} role="table">

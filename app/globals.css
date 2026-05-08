@@ -41,8 +41,8 @@
   --accent: #6366f1;
 
   /* ── Type ─────────────────────────────────────────────── */
-  --font-sans: var(--font-plex-sans), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-sans:  var(--font-plex-sans), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono:  var(--font-plex-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --t-display: 36px;
   --t-h1:      24px;
@@ -155,7 +155,23 @@ p,  .p  { font-size: var(--t-body); font-weight: 400; line-height: var(--lh-body
   white-space: nowrap;
 }
 .code-badge--team { color: var(--c-team); background: var(--c-team-bg); }
-.code-badge--dim  { color: var(--ink-muted); background: transparent; }
+.code-badge--dim  { color: var(--ink-muted); background: transparent; padding-left: 0; padding-right: 0; }
+
+/* ── Section index (running indices for each major pane) ─────
+ * Pairs a dim code-badge (e.g., "02 · WATERFALL") with the existing
+ * section label. Mono, uppercase, gray — quietly editorial.
+ */
+.section-index {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+}
+.section-index__rule {
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  background: var(--hairline-strong);
+}
 
 /* ── First-load stagger (PLAN.md §3.4) ───────────────────── */
 @keyframes stagger-in {
