@@ -2,6 +2,7 @@ import { Wordmark } from "@/components/wordmark";
 import { ProseStrap } from "@/components/prose-strap";
 import { Explorer } from "@/components/explorer";
 import { Footer } from "@/components/footer";
+import { presets } from "@/lib/base-case";
 import { leversFromSearchParams } from "@/lib/levers";
 import styles from "./page.module.css";
 
@@ -13,7 +14,12 @@ export default async function Page({
   searchParams: Promise<SearchParams>;
 }) {
   const params = await searchParams;
-  const initialLevers = leversFromSearchParams(params);
+  // Fresh page load (no shared-link params) starts on Expand to plan.
+  // URLs with explicit lever params still hydrate to whatever they encode.
+  const hasParams = Object.keys(params).length > 0;
+  const initialLevers = hasParams
+    ? leversFromSearchParams(params)
+    : { ...presets.expandToPlan };
 
   return (
     <main className={styles.main}>
