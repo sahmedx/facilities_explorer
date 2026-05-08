@@ -55,6 +55,28 @@
   width: 100%;
 }
 
+/* Below tablet width, the chart compresses too much for the rotated x-axis
+ * labels to read. Give it a min-width and let the container scroll. */
+@media (max-width: 1023px) {
+  .chartWrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .svg {
+    min-width: 640px;
+  }
+}
+
+@media (max-width: 479px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .legend {
+    flex-wrap: wrap;
+  }
+}
+
 .svg {
   width: 100%;
   height: auto;

@@ -10,6 +10,21 @@
   top: var(--s-5);
 }
 
+/* Sidebar no longer alongside the main column on tablets/phones — sticky
+ * positioning would just pin the panel awkwardly. Let it flow inline. */
+@media (max-width: 1023px) {
+  .panel {
+    position: static;
+    top: auto;
+  }
+}
+
+@media (max-width: 479px) {
+  .panel {
+    padding: var(--s-4) var(--s-5);
+  }
+}
+
 .head {
   display: flex;
   align-items: center;

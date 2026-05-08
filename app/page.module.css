@@ -44,54 +44,39 @@
   border-top: 1px solid var(--hairline-strong);
 }
 
-/* Below 1024px: a 5-lever drag-and-compare interface doesn't fit a phone
- * gracefully. Hide the dashboard and show a clean message in the same
- * design system — keep header, strap, and footer for context. */
-.mobileNotice {
-  display: none;
-  background: var(--paper);
-  border: 1px solid var(--hairline);
-  border-left: 3px solid var(--accent);
-  border-radius: var(--r-lg);
-  padding: var(--s-5) var(--s-6);
-}
-
-.mobileNoticeTitle {
-  font-size: var(--t-h3);
-  font-weight: 600;
-  color: var(--ink);
-  letter-spacing: -0.005em;
-  margin: 0 0 var(--s-2);
-}
-
-.mobileNoticeBody {
-  font-size: var(--t-body);
-  color: var(--ink-soft);
-  line-height: var(--lh-snug);
-  margin: 0;
-  text-wrap: pretty;
-}
-
+/* ── Tablet (≤1023px) ─────────────────────────────────────────
+ * Collapse to a single column. The sidebar no longer columns alongside
+ * other panes, so it flows inline with everything else. */
 @media (max-width: 1023px) {
   .main {
     grid-template-columns: 1fr;
     grid-template-areas:
       "header"
       "strap"
-      "mobile"
+      "kpis"
+      "sidebar"
+      "chart"
+      "reason"
+      "table"
+      "bucketdetail"
       "footer";
     padding: var(--s-5) var(--s-5) var(--s-6);
+    gap: var(--s-5);
   }
-  .kpis,
-  .chartPane,
-  .reasonPane,
-  .sidebar,
-  .tablePane,
-  .bucketDetailPane {
-    display: none;
+}
+
+/* ── Mobile (≤767px) ─────────────────────────────────────────
+ * Tighter padding; KPI / table refinements live in their own modules. */
+@media (max-width: 767px) {
+  .main {
+    padding: var(--s-4) var(--s-4) var(--s-5);
+    gap: var(--s-4);
   }
-  .mobileNotice {
-    display: block;
-    grid-area: mobile;
+}
+
+/* ── Small mobile (≤479px) ───────────────────────────────────── */
+@media (max-width: 479px) {
+  .main {
+    padding: var(--s-3) var(--s-3) var(--s-5);
   }
 }

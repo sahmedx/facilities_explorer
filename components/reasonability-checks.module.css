@@ -30,6 +30,30 @@
   flex-direction: column;
 }
 
+/* Mobile: drop the Notes column (static office-character text). Seven
+ * numeric columns remain — they need a minimum width to stay legible,
+ * so the container scrolls horizontally when the viewport is narrower. */
+@media (max-width: 767px) {
+  .table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .row {
+    grid-template-columns:
+      minmax(0, 1.2fr)
+      minmax(0, 0.55fr)
+      minmax(0, 0.7fr)
+      minmax(0, 0.55fr)
+      minmax(0, 0.65fr)
+      minmax(0, 0.7fr)
+      minmax(0, 0.7fr);
+    min-width: 640px;
+  }
+  .cellNotes {
+    display: none;
+  }
+}
+
 .headRow {
   border-bottom: 1px solid var(--hairline-strong);
   padding-bottom: 4px;

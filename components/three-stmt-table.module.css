@@ -31,6 +31,28 @@
   flex-direction: column;
 }
 
+/* Mobile: Driver column is too wide and least essential on a phone — the
+ * numbers carry the meaning. Drop it and collapse the grid template.
+ * Below ~640px, content is wrapped in horizontal scroll on the container
+ * so the four numeric columns can still scroll if they get tight. */
+@media (max-width: 767px) {
+  .table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .row {
+    grid-template-columns:
+      minmax(0, 1.6fr)
+      minmax(0, 0.8fr)
+      minmax(0, 0.8fr)
+      minmax(0, 0.8fr);
+    min-width: 480px;
+  }
+  .cellDriver {
+    display: none;
+  }
+}
+
 .headRow {
   border-bottom: 1px solid var(--hairline-strong);
   padding-bottom: 4px;
