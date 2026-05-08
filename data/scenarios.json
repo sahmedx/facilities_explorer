@@ -1,0 +1,889 @@
+{
+  "generatedAt": "2026-05-08T05:26:50.610Z",
+  "scenarios": {
+    "holdLine": {
+      "kpis": {
+        "grossPnL": 30457183.21463334,
+        "netPretaxPnL": 5725950.444351066,
+        "totalCapex": 416553.1500000001,
+        "netCashChange": -25901516.41109098,
+        "fy27AvgHC": 685.6666666666666,
+        "opexPerFTE": 44419.810230384064
+      },
+      "pnl": {
+        "rent": 11978752.782100001,
+        "sqftDrivenOther": 2625436.8752,
+        "snacks": 7799820.860000001,
+        "hcDrivenExSnacks": 3088209.1399999997,
+        "fixed": 1891425.5515,
+        "unallocated": 4166498.99,
+        "depreciation": 3073538.0058333334,
+        "grossExclDep": 27383645.208800003,
+        "gross": 30457183.21463334,
+        "allocations": -24731232.770282272,
+        "netPretax": 5725950.444351066
+      },
+      "bs": {
+        "deltaFAGross": 416553.1500000001,
+        "deltaAccumDep": -3073538.0058333334,
+        "deltaFANet": -2656984.8558333335,
+        "deltaAP": 1898681.947709021,
+        "deltaRetainedEarnings": -30457183.21463334
+      },
+      "cf": {
+        "cashOpex": 27383645.208800003,
+        "deltaAP": 1898681.947709021,
+        "operating": -25484963.261090983,
+        "investing": -416553.1500000001,
+        "financing": 0,
+        "netCashChange": -25901516.41109098
+      },
+      "capex": {
+        "lhi": 0,
+        "fnf": 0,
+        "oe": 416553.1500000001,
+        "total": 416553.1500000001,
+        "expansionSqft": 0
+      },
+      "threeStmtRows": [
+        {
+          "label": "Rent",
+          "statement": "pnl",
+          "fy26": 11629857.07,
+          "current": 11978752.782100001,
+          "driver": "Capacity expansion + 3% escalator"
+        },
+        {
+          "label": "Sqft-driven other",
+          "statement": "pnl",
+          "fy26": 4167227.8899999997,
+          "current": 4292244.7267,
+          "driver": "Sqft × inflation (utilities/maint/insur/fac payroll)"
+        },
+        {
+          "label": "Snacks",
+          "statement": "pnl",
+          "fy26": 6201738.34,
+          "current": 7799820.860000001,
+          "driver": "HC × snacks rate"
+        },
+        {
+          "label": "HC-driven OPEX",
+          "statement": "pnl",
+          "fy26": 2123096.02,
+          "current": 3088209.1399999997,
+          "driver": "Per-HC OPEX rates × HC"
+        },
+        {
+          "label": "Miscellaneous",
+          "statement": "pnl",
+          "fy26": 248806.1,
+          "current": 224617.7,
+          "driver": "Inflation only (bank/prof svcs/taxes)"
+        },
+        {
+          "label": "Depreciation",
+          "statement": "pnl",
+          "fy26": 3179696.9,
+          "current": 3073538.0058333334,
+          "driver": "Existing run-rate + new-asset SL"
+        },
+        {
+          "label": "Gross facilities P&L",
+          "statement": "pnl",
+          "fy26": 27550422.32,
+          "current": 30457183.21463334,
+          "driver": "Sum of all P&L lines above"
+        },
+        {
+          "label": "Δ Fixed assets (net)",
+          "statement": "bs",
+          "fy26": null,
+          "current": -2656984.8558333335,
+          "driver": "Capex placed − depreciation"
+        },
+        {
+          "label": "Δ Accumulated depreciation",
+          "statement": "bs",
+          "fy26": null,
+          "current": -3073538.0058333334,
+          "driver": "Mirror of P&L depreciation"
+        },
+        {
+          "label": "Δ Retained earnings",
+          "statement": "bs",
+          "fy26": null,
+          "current": -30457183.21463334,
+          "driver": "Mirror of gross facilities P&L"
+        },
+        {
+          "label": "Operating cash (gross OPEX)",
+          "statement": "cf",
+          "fy26": null,
+          "current": -25484963.261090983,
+          "driver": "−Gross OPEX (excl. D&A) + ΔAP"
+        },
+        {
+          "label": "Investing cash (capex)",
+          "statement": "cf",
+          "fy26": null,
+          "current": -416553.1500000001,
+          "driver": "Total capex outflow"
+        },
+        {
+          "label": "Net cash change",
+          "statement": "cf",
+          "fy26": null,
+          "current": -25901516.41109098,
+          "driver": "Allocations excluded (intercompany, not real cash)"
+        }
+      ],
+      "bucketDetail": [
+        {
+          "bucket": "Rent",
+          "driver": "rent",
+          "driverLabel": "Sqft × 3% escalator",
+          "fy26": 11629857.07,
+          "fy27": 11978752.782100001,
+          "deltaDollar": 348895.71210000105,
+          "deltaPct": 0.03000000000000009
+        },
+        {
+          "bucket": "Utilities",
+          "driver": "sqftXInflation",
+          "driverLabel": "Sqft × inflation",
+          "fy26": 641921.65,
+          "fy27": 661179.2995000001,
+          "deltaDollar": 19257.649500000058,
+          "deltaPct": 0.03000000000000009
+        },
+        {
+          "bucket": "Maintenance",
+          "driver": "sqftXInflation",
+          "driverLabel": "Sqft × inflation",
+          "fy26": 1899042.5,
+          "fy27": 1956013.7750000001,
+          "deltaDollar": 56971.27500000014,
+          "deltaPct": 0.030000000000000075
+        },
+        {
+          "bucket": "Insurance",
+          "driver": "sqftXInflation",
+          "driverLabel": "Sqft × inflation",
+          "fy26": 8003.69,
+          "fy27": 8243.8007,
+          "deltaDollar": 240.11070000000018,
+          "deltaPct": 0.030000000000000023
+        },
+        {
+          "bucket": "FacilitiesPayroll",
+          "driver": "sqftXInflation",
+          "driverLabel": "Sqft × inflation",
+          "fy26": 1618260.05,
+          "fy27": 1666807.8515,
+          "deltaDollar": 48547.80150000006,
+          "deltaPct": 0.030000000000000037
+        },
+        {
+          "bucket": "Snacks",
+          "driver": "snacks",
+          "driverLabel": "HC × snacks rate",
+          "fy26": 6201738.34,
+          "fy27": 7799820.860000002,
+          "deltaDollar": 1598082.5200000023,
+          "deltaPct": 0.2576829966676734
+        },
+        {
+          "bucket": "TandE",
+          "driver": "hcXInflation",
+          "driverLabel": "HC × inflation",
+          "fy26": 1343825.73,
+          "fy27": 1952187.96,
+          "deltaDollar": 608362.23,
+          "deltaPct": 0.45270916936528666
+        },
+        {
+          "bucket": "OfficeSupplies",
+          "driver": "hcXInflation",
+          "driverLabel": "HC × inflation",
+          "fy26": 589668.07,
+          "fy27": 808935.65,
+          "deltaDollar": 219267.58000000007,
+          "deltaPct": 0.3718491659214312
+        },
+        {
+          "bucket": "TeamEvents",
+          "driver": "hcXInflation",
+          "driverLabel": "HC × inflation",
+          "fy26": 38248.34,
+          "fy27": 75956.3,
+          "deltaDollar": 37707.96000000001,
+          "deltaPct": 0.9858718051554658
+        },
+        {
+          "bucket": "Postage",
+          "driver": "hcXInflation",
+          "driverLabel": "HC × inflation",
+          "fy26": 47796.85,
+          "fy27": 68255.32,
+          "deltaDollar": 20458.47000000001,
+          "deltaPct": 0.42802967141140075
+        },
+        {
+          "bucket": "FurnitureOpex",
+          "driver": "hcXInflation",
+          "driverLabel": "HC × inflation",
+          "fy26": 83376.77,
+          "fy27": 154477.85,
+          "deltaDollar": 71101.08,
+          "deltaPct": 0.8527684629663634
+        },
+        {
+          "bucket": "EquipSoftware",
+          "driver": "hcXInflation",
+          "driverLabel": "HC × inflation",
+          "fy26": 20180.26,
+          "fy27": 28396.06,
+          "deltaDollar": 8215.800000000003,
+          "deltaPct": 0.4071206218353977
+        },
+        {
+          "bucket": "BankCharges",
+          "driver": "inflationOnly",
+          "driverLabel": "Inflation only",
+          "fy26": 149082.43,
+          "fy27": 115196.65,
+          "deltaDollar": -33885.78,
+          "deltaPct": -0.22729559747583938
+        },
+        {
+          "bucket": "ProfServices",
+          "driver": "inflationOnly",
+          "driverLabel": "Inflation only",
+          "fy26": 73847.16,
+          "fy27": 73984.5,
+          "deltaDollar": 137.3399999999965,
+          "deltaPct": 0.0018597871603998923
+        },
+        {
+          "bucket": "Taxes",
+          "driver": "inflationOnly",
+          "driverLabel": "Inflation only",
+          "fy26": 25876.51,
+          "fy27": 35436.55,
+          "deltaDollar": 9560.040000000005,
+          "deltaPct": 0.3694485848362088
+        },
+        {
+          "bucket": "Depreciation",
+          "driver": "depreciation",
+          "driverLabel": "Asset roll-forward",
+          "fy26": 3179696.9,
+          "fy27": 3073538.0058333334,
+          "deltaDollar": -106158.89416666655,
+          "deltaPct": -0.033386482267120036
+        }
+      ],
+      "waterfall": [
+        {
+          "label": "FY26 gross",
+          "kind": "anchor",
+          "value": 27550422.32,
+          "tone": "neutral"
+        },
+        {
+          "label": "Rent",
+          "kind": "delta",
+          "value": 348895.71210000105,
+          "tone": "bad",
+          "driver": "Capacity expansion + 3% escalator",
+          "buckets": [
+            "Rent"
+          ]
+        },
+        {
+          "label": "Sqft-driven other",
+          "kind": "delta",
+          "value": 125016.8367000008,
+          "tone": "bad",
+          "driver": "Sqft × inflation (utilities/maint/insur/fac payroll)",
+          "buckets": [
+            "Utilities",
+            "Maintenance",
+            "Insurance",
+            "FacilitiesPayroll"
+          ]
+        },
+        {
+          "label": "Snacks",
+          "kind": "delta",
+          "value": 1598082.5200000014,
+          "tone": "bad",
+          "driver": "HC × snacks rate",
+          "buckets": [
+            "Snacks"
+          ]
+        },
+        {
+          "label": "HC-driven OPEX",
+          "kind": "delta",
+          "value": 965113.1199999996,
+          "tone": "bad",
+          "driver": "Per-HC OPEX rates × HC",
+          "buckets": [
+            "TandE",
+            "OfficeSupplies",
+            "TeamEvents",
+            "Postage",
+            "FurnitureOpex",
+            "EquipSoftware"
+          ]
+        },
+        {
+          "label": "Miscellaneous",
+          "kind": "delta",
+          "value": -24188.399999999994,
+          "tone": "good",
+          "driver": "Inflation only (bank/prof svcs/taxes)",
+          "buckets": [
+            "BankCharges",
+            "ProfServices",
+            "Taxes"
+          ]
+        },
+        {
+          "label": "Depreciation",
+          "kind": "delta",
+          "value": -106158.89416666655,
+          "tone": "good",
+          "driver": "Existing run-rate + new-asset SL",
+          "buckets": [
+            "Depreciation"
+          ]
+        },
+        {
+          "label": "FY27 gross",
+          "kind": "anchor",
+          "value": 30457183.21463334,
+          "tone": "neutral"
+        }
+      ],
+      "reasonability": [
+        {
+          "office": "HQ - SF",
+          "fy27AvgHC": 308,
+          "fy27SqftWeighted": 40000,
+          "sqftPerHC": 129.79989183342346,
+          "rentPerSqftPerYr": 125.09308800000001,
+          "snacksPerHCPerYr": 10455.806479177934,
+          "utilitiesPerSqftPerYr": 2.321579039215686
+        },
+        {
+          "office": "New York",
+          "fy27AvgHC": 142,
+          "fy27SqftWeighted": 20000,
+          "sqftPerHC": 141.1764705882353,
+          "rentPerSqftPerYr": 168.66208799999998,
+          "snacksPerHCPerYr": 9946.781505882353,
+          "utilitiesPerSqftPerYr": 3.3819816666666673
+        },
+        {
+          "office": "Ireland",
+          "fy27AvgHC": 67,
+          "fy27SqftWeighted": 8000,
+          "sqftPerHC": 119.99999999999999,
+          "rentPerSqftPerYr": 100.19633999999999,
+          "snacksPerHCPerYr": 20527.22685,
+          "utilitiesPerSqftPerYr": 44.85631372549019
+        },
+        {
+          "office": "United Kingdom",
+          "fy27AvgHC": 31,
+          "fy27SqftWeighted": 3500,
+          "sqftPerHC": 113.51351351351352,
+          "rentPerSqftPerYr": 18.323700000000002,
+          "snacksPerHCPerYr": 81.228,
+          "utilitiesPerSqftPerYr": 0
+        },
+        {
+          "office": "Japan",
+          "fy27AvgHC": 36,
+          "fy27SqftWeighted": 3000,
+          "sqftPerHC": 83.72093023255813,
+          "rentPerSqftPerYr": 451.2228120000001,
+          "snacksPerHCPerYr": 4193.849860465116,
+          "utilitiesPerSqftPerYr": 25.192022962962955
+        },
+        {
+          "office": "South Korea",
+          "fy27AvgHC": 31,
+          "fy27SqftWeighted": 2000,
+          "sqftPerHC": 64.86486486486487,
+          "rentPerSqftPerYr": 172.473912,
+          "snacksPerHCPerYr": 4515.212108108108,
+          "utilitiesPerSqftPerYr": 0.5591716666666666
+        },
+        {
+          "office": "Australia",
+          "fy27AvgHC": 49,
+          "fy27SqftWeighted": 4500,
+          "sqftPerHC": 92.15017064846415,
+          "rentPerSqftPerYr": 84.63262799999998,
+          "snacksPerHCPerYr": 1879.2520136518774,
+          "utilitiesPerSqftPerYr": 0.8091997849462365
+        },
+        {
+          "office": "India",
+          "fy27AvgHC": 23,
+          "fy27SqftWeighted": 9000,
+          "sqftPerHC": 394.16058394160586,
+          "rentPerSqftPerYr": 42.978192,
+          "snacksPerHCPerYr": 4064.8445255474453,
+          "utilitiesPerSqftPerYr": 2.642427777777778
+        }
+      ]
+    },
+    "expandToPlan": {
+      "kpis": {
+        "grossPnL": 35739807.382500015,
+        "netPretaxPnL": 6719083.7879099995,
+        "totalCapex": 13436145.67,
+        "netCashChange": -42928219.741765745,
+        "fy27AvgHC": 685.6666666666666,
+        "opexPerFTE": 52124.172166990786
+      },
+      "pnl": {
+        "rent": 15659786.300000008,
+        "sqftDrivenOther": 2901918.670000001,
+        "snacks": 7799820.860000001,
+        "hcDrivenExSnacks": 3088209.1399999997,
+        "fixed": 2270336.5700000003,
+        "unallocated": 4166498.99,
+        "depreciation": 4019735.8425000003,
+        "grossExclDep": 31720071.540000014,
+        "gross": 35739807.382500015,
+        "allocations": -29020723.594590016,
+        "netPretax": 6719083.7879099995
+      },
+      "bs": {
+        "deltaFAGross": 13436145.67,
+        "deltaAccumDep": -4019735.8425000003,
+        "deltaFANet": 9416409.8275,
+        "deltaAP": 2227997.46823427,
+        "deltaRetainedEarnings": -35739807.382500015
+      },
+      "cf": {
+        "cashOpex": 31720071.540000014,
+        "deltaAP": 2227997.46823427,
+        "operating": -29492074.071765743,
+        "investing": -13436145.67,
+        "financing": 0,
+        "netCashChange": -42928219.741765745
+      },
+      "capex": {
+        "lhi": 12180000,
+        "fnf": 839592.5199999999,
+        "oe": 416553.1500000001,
+        "total": 13436145.67,
+        "expansionSqft": 34800
+      },
+      "threeStmtRows": [
+        {
+          "label": "Rent",
+          "statement": "pnl",
+          "fy26": 11629857.07,
+          "current": 15659786.300000008,
+          "driver": "Capacity expansion + 3% escalator"
+        },
+        {
+          "label": "Sqft-driven other",
+          "statement": "pnl",
+          "fy26": 4167227.8899999997,
+          "current": 4947637.540000001,
+          "driver": "Sqft × inflation (utilities/maint/insur/fac payroll)"
+        },
+        {
+          "label": "Snacks",
+          "statement": "pnl",
+          "fy26": 6201738.34,
+          "current": 7799820.860000001,
+          "driver": "HC × snacks rate"
+        },
+        {
+          "label": "HC-driven OPEX",
+          "statement": "pnl",
+          "fy26": 2123096.02,
+          "current": 3088209.1399999997,
+          "driver": "Per-HC OPEX rates × HC"
+        },
+        {
+          "label": "Miscellaneous",
+          "statement": "pnl",
+          "fy26": 248806.1,
+          "current": 224617.7,
+          "driver": "Inflation only (bank/prof svcs/taxes)"
+        },
+        {
+          "label": "Depreciation",
+          "statement": "pnl",
+          "fy26": 3179696.9,
+          "current": 4019735.8425000003,
+          "driver": "Existing run-rate + new-asset SL"
+        },
+        {
+          "label": "Gross facilities P&L",
+          "statement": "pnl",
+          "fy26": 27550422.32,
+          "current": 35739807.382500015,
+          "driver": "Sum of all P&L lines above"
+        },
+        {
+          "label": "Δ Fixed assets (net)",
+          "statement": "bs",
+          "fy26": null,
+          "current": 9416409.8275,
+          "driver": "Capex placed − depreciation"
+        },
+        {
+          "label": "Δ Accumulated depreciation",
+          "statement": "bs",
+          "fy26": null,
+          "current": -4019735.8425000003,
+          "driver": "Mirror of P&L depreciation"
+        },
+        {
+          "label": "Δ Retained earnings",
+          "statement": "bs",
+          "fy26": null,
+          "current": -35739807.382500015,
+          "driver": "Mirror of gross facilities P&L"
+        },
+        {
+          "label": "Operating cash (gross OPEX)",
+          "statement": "cf",
+          "fy26": null,
+          "current": -29492074.071765743,
+          "driver": "−Gross OPEX (excl. D&A) + ΔAP"
+        },
+        {
+          "label": "Investing cash (capex)",
+          "statement": "cf",
+          "fy26": null,
+          "current": -13436145.67,
+          "driver": "Total capex outflow"
+        },
+        {
+          "label": "Net cash change",
+          "statement": "cf",
+          "fy26": null,
+          "current": -42928219.741765745,
+          "driver": "Allocations excluded (intercompany, not real cash)"
+        }
+      ],
+      "bucketDetail": [
+        {
+          "bucket": "Rent",
+          "driver": "rent",
+          "driverLabel": "Sqft × 3% escalator",
+          "fy26": 11629857.07,
+          "fy27": 15659786.300000008,
+          "deltaDollar": 4029929.230000008,
+          "deltaPct": 0.3465158003012334
+        },
+        {
+          "bucket": "Utilities",
+          "driver": "sqftXInflation",
+          "driverLabel": "Sqft × inflation",
+          "fy26": 641921.65,
+          "fy27": 774806.6000000001,
+          "deltaDollar": 132884.95000000007,
+          "deltaPct": 0.20701116717281628
+        },
+        {
+          "bucket": "Maintenance",
+          "driver": "sqftXInflation",
+          "driverLabel": "Sqft × inflation",
+          "fy26": 1899042.5,
+          "fy27": 2118097.8800000004,
+          "deltaDollar": 219055.38000000035,
+          "deltaPct": 0.11535043581173163
+        },
+        {
+          "bucket": "Insurance",
+          "driver": "sqftXInflation",
+          "driverLabel": "Sqft × inflation",
+          "fy26": 8003.69,
+          "fy27": 9014.190000000002,
+          "deltaDollar": 1010.5000000000027,
+          "deltaPct": 0.12625426522016756
+        },
+        {
+          "bucket": "FacilitiesPayroll",
+          "driver": "sqftXInflation",
+          "driverLabel": "Sqft × inflation",
+          "fy26": 1618260.05,
+          "fy27": 2045718.8700000006,
+          "deltaDollar": 427458.82000000053,
+          "deltaPct": 0.26414717461510623
+        },
+        {
+          "bucket": "Snacks",
+          "driver": "snacks",
+          "driverLabel": "HC × snacks rate",
+          "fy26": 6201738.34,
+          "fy27": 7799820.860000002,
+          "deltaDollar": 1598082.5200000023,
+          "deltaPct": 0.2576829966676734
+        },
+        {
+          "bucket": "TandE",
+          "driver": "hcXInflation",
+          "driverLabel": "HC × inflation",
+          "fy26": 1343825.73,
+          "fy27": 1952187.96,
+          "deltaDollar": 608362.23,
+          "deltaPct": 0.45270916936528666
+        },
+        {
+          "bucket": "OfficeSupplies",
+          "driver": "hcXInflation",
+          "driverLabel": "HC × inflation",
+          "fy26": 589668.07,
+          "fy27": 808935.65,
+          "deltaDollar": 219267.58000000007,
+          "deltaPct": 0.3718491659214312
+        },
+        {
+          "bucket": "TeamEvents",
+          "driver": "hcXInflation",
+          "driverLabel": "HC × inflation",
+          "fy26": 38248.34,
+          "fy27": 75956.3,
+          "deltaDollar": 37707.96000000001,
+          "deltaPct": 0.9858718051554658
+        },
+        {
+          "bucket": "Postage",
+          "driver": "hcXInflation",
+          "driverLabel": "HC × inflation",
+          "fy26": 47796.85,
+          "fy27": 68255.32,
+          "deltaDollar": 20458.47000000001,
+          "deltaPct": 0.42802967141140075
+        },
+        {
+          "bucket": "FurnitureOpex",
+          "driver": "hcXInflation",
+          "driverLabel": "HC × inflation",
+          "fy26": 83376.77,
+          "fy27": 154477.85,
+          "deltaDollar": 71101.08,
+          "deltaPct": 0.8527684629663634
+        },
+        {
+          "bucket": "EquipSoftware",
+          "driver": "hcXInflation",
+          "driverLabel": "HC × inflation",
+          "fy26": 20180.26,
+          "fy27": 28396.06,
+          "deltaDollar": 8215.800000000003,
+          "deltaPct": 0.4071206218353977
+        },
+        {
+          "bucket": "BankCharges",
+          "driver": "inflationOnly",
+          "driverLabel": "Inflation only",
+          "fy26": 149082.43,
+          "fy27": 115196.65,
+          "deltaDollar": -33885.78,
+          "deltaPct": -0.22729559747583938
+        },
+        {
+          "bucket": "ProfServices",
+          "driver": "inflationOnly",
+          "driverLabel": "Inflation only",
+          "fy26": 73847.16,
+          "fy27": 73984.5,
+          "deltaDollar": 137.3399999999965,
+          "deltaPct": 0.0018597871603998923
+        },
+        {
+          "bucket": "Taxes",
+          "driver": "inflationOnly",
+          "driverLabel": "Inflation only",
+          "fy26": 25876.51,
+          "fy27": 35436.55,
+          "deltaDollar": 9560.040000000005,
+          "deltaPct": 0.3694485848362088
+        },
+        {
+          "bucket": "Depreciation",
+          "driver": "depreciation",
+          "driverLabel": "Asset roll-forward",
+          "fy26": 3179696.9,
+          "fy27": 4019735.8425000003,
+          "deltaDollar": 840038.9425000004,
+          "deltaPct": 0.2641883704387045
+        }
+      ],
+      "waterfall": [
+        {
+          "label": "FY26 gross",
+          "kind": "anchor",
+          "value": 27550422.32,
+          "tone": "neutral"
+        },
+        {
+          "label": "Rent",
+          "kind": "delta",
+          "value": 4029929.230000008,
+          "tone": "bad",
+          "driver": "Capacity expansion + 3% escalator",
+          "buckets": [
+            "Rent"
+          ]
+        },
+        {
+          "label": "Sqft-driven other",
+          "kind": "delta",
+          "value": 780409.6500000013,
+          "tone": "bad",
+          "driver": "Sqft × inflation (utilities/maint/insur/fac payroll)",
+          "buckets": [
+            "Utilities",
+            "Maintenance",
+            "Insurance",
+            "FacilitiesPayroll"
+          ]
+        },
+        {
+          "label": "Snacks",
+          "kind": "delta",
+          "value": 1598082.5200000014,
+          "tone": "bad",
+          "driver": "HC × snacks rate",
+          "buckets": [
+            "Snacks"
+          ]
+        },
+        {
+          "label": "HC-driven OPEX",
+          "kind": "delta",
+          "value": 965113.1199999996,
+          "tone": "bad",
+          "driver": "Per-HC OPEX rates × HC",
+          "buckets": [
+            "TandE",
+            "OfficeSupplies",
+            "TeamEvents",
+            "Postage",
+            "FurnitureOpex",
+            "EquipSoftware"
+          ]
+        },
+        {
+          "label": "Miscellaneous",
+          "kind": "delta",
+          "value": -24188.399999999994,
+          "tone": "good",
+          "driver": "Inflation only (bank/prof svcs/taxes)",
+          "buckets": [
+            "BankCharges",
+            "ProfServices",
+            "Taxes"
+          ]
+        },
+        {
+          "label": "Depreciation",
+          "kind": "delta",
+          "value": 840038.9425000004,
+          "tone": "bad",
+          "driver": "Existing run-rate + new-asset SL",
+          "buckets": [
+            "Depreciation"
+          ]
+        },
+        {
+          "label": "FY27 gross",
+          "kind": "anchor",
+          "value": 35739807.382500015,
+          "tone": "neutral"
+        }
+      ],
+      "reasonability": [
+        {
+          "office": "HQ - SF",
+          "fy27AvgHC": 308,
+          "fy27SqftWeighted": 46417,
+          "sqftPerHC": 150.62195781503516,
+          "rentPerSqftPerYr": 135.74900272890483,
+          "snacksPerHCPerYr": 10455.806479177934,
+          "utilitiesPerSqftPerYr": 2.176806463195691
+        },
+        {
+          "office": "New York",
+          "fy27AvgHC": 142,
+          "fy27SqftWeighted": 22333,
+          "sqftPerHC": 157.64705882352945,
+          "rentPerSqftPerYr": 167.6277958208955,
+          "snacksPerHCPerYr": 9946.781505882353,
+          "utilitiesPerSqftPerYr": 3.383100895522387
+        },
+        {
+          "office": "Ireland",
+          "fy27AvgHC": 67,
+          "fy27SqftWeighted": 10771,
+          "sqftPerHC": 161.5625,
+          "rentPerSqftPerYr": 105.84167396518374,
+          "snacksPerHCPerYr": 20527.22685,
+          "utilitiesPerSqftPerYr": 45.991784912959375
+        },
+        {
+          "office": "United Kingdom",
+          "fy27AvgHC": 31,
+          "fy27SqftWeighted": 4958,
+          "sqftPerHC": 160.81081081081084,
+          "rentPerSqftPerYr": 21.79410957983193,
+          "snacksPerHCPerYr": 81.228,
+          "utilitiesPerSqftPerYr": 0
+        },
+        {
+          "office": "Japan",
+          "fy27AvgHC": 36,
+          "fy27SqftWeighted": 5188,
+          "sqftPerHC": 144.7674418604651,
+          "rentPerSqftPerYr": 426.7280636144578,
+          "snacksPerHCPerYr": 4193.849860465116,
+          "utilitiesPerSqftPerYr": 21.050502168674697
+        },
+        {
+          "office": "South Korea",
+          "fy27AvgHC": 31,
+          "fy27SqftWeighted": 4333,
+          "sqftPerHC": 140.54054054054055,
+          "rentPerSqftPerYr": 193.41233769230774,
+          "snacksPerHCPerYr": 4515.212108108108,
+          "utilitiesPerSqftPerYr": 0.5995500000000001
+        },
+        {
+          "office": "Australia",
+          "fy27AvgHC": 49,
+          "fy27SqftWeighted": 7300,
+          "sqftPerHC": 149.48805460750853,
+          "rentPerSqftPerYr": 93.61440684931507,
+          "snacksPerHCPerYr": 1879.2520136518774,
+          "utilitiesPerSqftPerYr": 0.9483164383561644
+        },
+        {
+          "office": "India",
+          "fy27AvgHC": 23,
+          "fy27SqftWeighted": 9000,
+          "sqftPerHC": 394.16058394160586,
+          "rentPerSqftPerYr": 42.401515555555555,
+          "snacksPerHCPerYr": 4064.8445255474453,
+          "utilitiesPerSqftPerYr": 2.642427777777778
+        }
+      ]
+    }
+  }
+}

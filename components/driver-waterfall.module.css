@@ -1,0 +1,219 @@
+.container {
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-lg);
+  padding: var(--s-5) var(--s-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  min-height: 380px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--s-4);
+}
+
+.sub {
+  font-size: var(--t-small);
+  color: var(--ink-muted);
+  margin: 4px 0 0;
+  text-wrap: pretty;
+  max-width: 48ch;
+}
+
+.legend {
+  display: flex;
+  gap: var(--s-3);
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--t-small);
+  color: var(--ink-muted);
+}
+
+.swatch {
+  display: inline-block;
+  width: 12px;
+  height: 8px;
+  border-radius: 1px;
+}
+
+.swatchBad    { background: var(--pos); opacity: 0.85; }
+.swatchGood   { background: var(--neg); opacity: 0.85; }
+.swatchAnchor { background: var(--c-emp); opacity: 0.7; }
+
+.chartWrap {
+  position: relative;
+  width: 100%;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.placeholder {
+  height: 280px;
+  border: 1px dashed var(--hairline-strong);
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: var(--t-small);
+}
+
+.bar {
+  transition-property: opacity, fill-opacity;
+  transition-duration: 120ms;
+  transition-timing-function: ease-out;
+  fill-opacity: 0.85;
+}
+
+.barHover {
+  fill-opacity: 1;
+}
+
+.barAnchor { fill: var(--c-emp); }
+.barBad    { fill: var(--pos); }
+.barGood   { fill: var(--neg); }
+
+.axisText {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  fill: var(--ink-muted);
+  font-feature-settings: "tnum" 1;
+}
+
+.axisLabel {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  fill: var(--ink-muted);
+  letter-spacing: 0;
+}
+
+.valueLabel {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  fill: var(--ink-soft);
+  font-feature-settings: "tnum" 1;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+/* Tooltip — HTML overlay. `top` is set inline (cursor-following). */
+.tooltip {
+  position: absolute;
+  transform: translate(-50%, -4px);
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-md);
+  padding: 8px 12px;
+  box-shadow: var(--elev-2);
+  pointer-events: none;
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in;
+  min-width: 200px;
+  max-width: 280px;
+  z-index: 2;
+}
+
+.tooltipVisible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  transition-duration: 50ms;
+  transition-timing-function: ease-out;
+}
+
+.tooltipFlip { transform: translate(-100%, -4px); }
+.tooltipFlip.tooltipVisible { transform: translate(-100%, 0); }
+
+.tooltipLabel {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 4px;
+}
+
+.tooltipValue {
+  font-size: var(--t-h4);
+  font-weight: 600;
+  color: var(--ink);
+  font-feature-settings: "tnum" 1;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 4px;
+}
+
+.tooltipDriver {
+  font-size: var(--t-small);
+  color: var(--ink-muted);
+  text-wrap: pretty;
+  line-height: var(--lh-snug);
+}
+
+/* Drill-down table inside the tooltip — per-bucket Δ$ / Δ% under current levers. */
+.tooltipDrill {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid var(--hairline);
+}
+
+.drillRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.9fr) minmax(0, 0.6fr);
+  align-items: baseline;
+  gap: 8px;
+  padding: 2px 0;
+}
+
+.drillHead {
+  padding-bottom: 3px;
+  margin-bottom: 1px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.drillHead .drillBucket,
+.drillHead .drillNum {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 500;
+}
+
+.drillBucket {
+  font-size: var(--t-small);
+  color: var(--ink-soft);
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.drillNum {
+  font-size: var(--t-small);
+  text-align: right;
+  color: var(--ink);
+  font-feature-settings: "tnum" 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.drillPos { color: var(--pos); }
+.drillNeg { color: var(--neg); }

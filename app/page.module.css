@@ -1,0 +1,97 @@
+/* Page grid for the FY27 Facilities Explorer.
+ * Sidebar fixed at 380px (Plex Reorg precedent — PLAN.md §2.1).
+ */
+
+.main {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: var(--s-7) var(--s-7) var(--s-8);
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  grid-template-rows: auto auto auto auto auto auto auto auto;
+  grid-template-areas:
+    "header        header"
+    "strap         strap"
+    "kpis          kpis"
+    "chart         sidebar"
+    "reason        sidebar"
+    "table         sidebar"
+    "bucketdetail  bucketdetail"
+    "footer        footer";
+  gap: var(--s-6);
+  min-height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--s-4);
+  border-bottom: 1px solid var(--hairline-strong);
+}
+
+.strap   { grid-area: strap; max-width: 720px; }
+.kpis    { grid-area: kpis; }
+.chartPane { grid-area: chart; }
+.reasonPane { grid-area: reason; }
+.sidebar { grid-area: sidebar; }
+.tablePane { grid-area: table; }
+.bucketDetailPane { grid-area: bucketdetail; }
+.footer {
+  grid-area: footer;
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--hairline-strong);
+}
+
+/* Below 1024px: a 5-lever drag-and-compare interface doesn't fit a phone
+ * gracefully. Hide the dashboard and show a clean message in the same
+ * design system — keep header, strap, and footer for context. */
+.mobileNotice {
+  display: none;
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--r-lg);
+  padding: var(--s-5) var(--s-6);
+}
+
+.mobileNoticeTitle {
+  font-size: var(--t-h3);
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+  margin: 0 0 var(--s-2);
+}
+
+.mobileNoticeBody {
+  font-size: var(--t-body);
+  color: var(--ink-soft);
+  line-height: var(--lh-snug);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+@media (max-width: 1023px) {
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "strap"
+      "mobile"
+      "footer";
+    padding: var(--s-5) var(--s-5) var(--s-6);
+  }
+  .kpis,
+  .chartPane,
+  .reasonPane,
+  .sidebar,
+  .tablePane,
+  .bucketDetailPane {
+    display: none;
+  }
+  .mobileNotice {
+    display: block;
+    grid-area: mobile;
+  }
+}

@@ -1,0 +1,68 @@
+/* Three preset buttons, equal width, hairline border, scale-on-press
+ * (polish-layer §3.2). Active state: 1px indigo border + indigo bg tint.
+ * `transition-property` is explicit per the no-`transition: all` rule.
+ */
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s-2);
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: var(--s-3);
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-md);
+  color: var(--ink-soft);
+  text-align: left;
+  min-height: 48px;
+  cursor: pointer;
+  transition-property: scale, background-color, border-color, color;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+  font-family: var(--font-sans);
+}
+
+.btn:hover {
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.btn:active {
+  scale: 0.96;
+}
+
+.active {
+  background: var(--c-team-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.active:hover {
+  background: var(--c-team-bg);
+}
+
+.label {
+  font-size: var(--t-body);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+}
+
+.sub {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.01em;
+  color: var(--ink-muted);
+  font-feature-settings: "tnum" 1;
+}
+
+.active .sub {
+  color: var(--accent);
+  opacity: 0.78;
+}

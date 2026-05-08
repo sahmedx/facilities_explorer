@@ -1,0 +1,138 @@
+.panel {
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-lg);
+  padding: var(--s-5) var(--s-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-5);
+  position: sticky;
+  top: var(--s-5);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.reset {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  /* Optical icon-side trim per polish-layer surfaces.md */
+  padding: 8px 10px 8px 12px;
+  background: transparent;
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--r-md);
+  color: var(--ink-soft);
+  font-family: var(--font-sans);
+  font-size: var(--t-small);
+  cursor: pointer;
+  /* Polish-layer §3.2: minimum 40×40 hit area for clickable elements. */
+  min-height: 40px;
+  min-width: 40px;
+  transition-property: scale, background-color, border-color, color, opacity;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+.reset:hover:not(:disabled) {
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.reset:active:not(:disabled) {
+  scale: 0.96;
+}
+
+.reset:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.resetGlyph {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.sliders {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+
+/* ── Expand FY27 toggle ─────────────────────────────────
+ * Compact two-button radio sandwiched between the presets and the sliders.
+ * The labeled question style mirrors the "Levers" head row above.
+ */
+.expandToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding-top: var(--s-3);
+  padding-bottom: var(--s-1);
+  border-top: 1px solid var(--hairline);
+}
+
+.expandLabel {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-feature-settings: "tnum" 1;
+}
+
+.expandButtons {
+  display: inline-flex;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-md);
+  padding: 2px;
+  gap: 2px;
+}
+
+.expandBtn {
+  min-width: 56px;
+  min-height: 32px;
+  padding: 4px 12px;
+  background: transparent;
+  border: 0;
+  border-radius: calc(var(--r-md) - 2px);
+  color: var(--ink-muted);
+  font-family: var(--font-sans);
+  font-size: var(--t-small);
+  font-weight: 500;
+  cursor: pointer;
+  transition-property: background-color, color, scale;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+.expandBtn:hover {
+  color: var(--ink);
+}
+
+.expandBtn:active {
+  scale: 0.96;
+}
+
+.expandBtnActive {
+  background: var(--paper);
+  color: var(--accent);
+  box-shadow: 0 1px 2px rgba(21, 23, 26, 0.06);
+}
+
+.expandBtnActive:hover {
+  color: var(--accent);
+}
+
+.note {
+  font-size: var(--t-micro);
+  color: var(--ink-faint);
+  margin: 0;
+  padding-top: var(--s-2);
+  border-top: 1px solid var(--hairline);
+}

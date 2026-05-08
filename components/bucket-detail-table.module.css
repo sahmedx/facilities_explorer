@@ -1,0 +1,162 @@
+.container {
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-lg);
+  padding: var(--s-5) var(--s-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-4);
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: var(--s-3);
+}
+
+.sub {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+  font-feature-settings: "tnum" 1;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+}
+
+.headRow {
+  border-bottom: 1px solid var(--hairline-strong);
+  padding-bottom: 4px;
+  margin-bottom: 2px;
+}
+
+.group {
+  display: contents;
+}
+
+.groupHeader {
+  padding: var(--s-3) 0 2px;
+  border-top: 1px solid var(--hairline);
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+}
+
+.group:first-of-type .groupHeader {
+  border-top: 0;
+}
+
+.groupTitle {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.groupSub {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--ink-faint);
+  font-feature-settings: "tnum" 1;
+}
+
+.row {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.4fr)
+    minmax(0, 0.8fr)
+    minmax(0, 0.8fr)
+    minmax(0, 0.7fr)
+    minmax(0, 0.6fr)
+    minmax(0, 1.2fr);
+  align-items: baseline;
+  gap: var(--s-3);
+  padding: 5px var(--s-2);
+  border-radius: var(--r-sm);
+  transition-property: background-color;
+  transition-duration: 120ms;
+  transition-timing-function: ease-out;
+}
+
+.row:hover {
+  background: var(--surface);
+}
+
+.rowEmphasized {
+  border-top: 1px solid var(--hairline-strong);
+  border-bottom: 1px solid var(--hairline-strong);
+  margin-top: 2px;
+}
+
+.rowEmphasized .cellLabel,
+.rowEmphasized .cellNum {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.headRow,
+.headRow:hover {
+  background: transparent;
+}
+
+.cellLabel {
+  font-size: var(--t-body);
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+
+.cellNum {
+  font-size: var(--t-body);
+  text-align: right;
+  color: var(--ink);
+  font-feature-settings: "tnum" 1;
+  font-variant-numeric: tabular-nums;
+  transition-property: color;
+  transition-duration: 120ms;
+  transition-timing-function: ease-out;
+}
+
+.headRow .cellNum,
+.headRow .cellLabel {
+  color: var(--ink-muted);
+}
+
+.deltaPos { color: var(--pos); }
+.deltaNeg { color: var(--neg); }
+
+.cellDriver {
+  font-size: var(--t-small);
+  color: var(--ink-muted);
+  font-family: var(--font-sans);
+  text-align: left;
+  text-wrap: pretty;
+  line-height: var(--lh-snug);
+}
+
+.note {
+  font-size: var(--t-micro);
+  color: var(--ink-faint);
+  margin: 0;
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--hairline);
+  text-wrap: pretty;
+}
+
+.placeholder {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: var(--t-small);
+  border: 1px dashed var(--hairline-strong);
+  border-radius: var(--r-md);
+}

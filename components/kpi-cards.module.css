@@ -1,0 +1,45 @@
+.row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--s-4);
+}
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-lg);
+  padding: var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+
+.emphasis {
+  border-color: var(--accent);
+}
+
+.value {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--ink);
+  font-feature-settings: "tnum" 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.005em;
+  /* Interruptible color transition for sign-flip retargeting (polish §3.2). */
+  transition-property: color;
+  transition-duration: 120ms;
+  transition-timing-function: ease-out;
+}
+
+.delta {
+  font-size: var(--t-small);
+  color: var(--ink-faint);
+  font-feature-settings: "tnum" 1;
+  font-variant-numeric: tabular-nums;
+  transition-property: color;
+  transition-duration: 120ms;
+  transition-timing-function: ease-out;
+}
+
+.deltaPos { color: var(--pos); }
+.deltaNeg { color: var(--neg); }

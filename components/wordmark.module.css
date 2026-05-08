@@ -1,0 +1,18 @@
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+}
+
+.mark {
+  font-size: var(--t-h2);
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+
+.dot {
+  color: var(--ink-muted);
+  font-weight: 500;
+  margin: 0 var(--s-1);
+}

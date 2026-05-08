@@ -1,0 +1,192 @@
+/* Design tokens lifted from ../design/colors_and_type.css (Plex Reorg system).
+ * Per PLAN.md §3.1: hairlines, indigo accent, oxblood/sage deltas, no SVG icons,
+ * no emoji, no gradients, mono tabular numerals everywhere.
+ *
+ * The polish layer (PLAN.md §3.2) adds:
+ *   - tabular-nums on :root
+ *   - font smoothing on html
+ *   - transition tokens
+ *   - first-load stagger keyframe + utility class
+ */
+
+:root {
+  /* ── Surfaces ─────────────────────────────────────────── */
+  --bg:          #f5f6f8;
+  --paper:       #ffffff;
+  --surface:     #f7f8fa;
+  --surface-2:   #eef0f4;
+
+  /* ── Ink ──────────────────────────────────────────────── */
+  --ink:         #15171a;
+  --ink-soft:    rgba(21, 23, 26, 0.78);
+  --ink-muted:   rgba(21, 23, 26, 0.58);
+  --ink-faint:   rgba(21, 23, 26, 0.36);
+
+  /* ── Hairlines ────────────────────────────────────────── */
+  --hairline:        rgba(21, 23, 26, 0.10);
+  --hairline-strong: rgba(21, 23, 26, 0.20);
+
+  /* ── Level palette ────────────────────────────────────── */
+  --c-team: #6366f1;  --c-team-bg: #eef0ff;
+  --c-cc:   #0891b2;  --c-cc-bg:   #ecfbff;
+  --c-dept: #059669;  --c-dept-bg: #ecfdf5;
+  --c-st:   #d97706;  --c-st-bg:   #fff8eb;
+  --c-emp:  #64748b;  --c-emp-bg:  #f1f5f9;
+
+  /* ── Semantic deltas (finance-coded) ──────────────────── */
+  --pos:    #b04848;  --pos-bg: #fdf3f3;   /* cost INCREASE = oxblood */
+  --neg:    #2f8a64;  --neg-bg: #effaf4;   /* cost DECREASE = sage */
+  --warn:   #d97706;
+  --bad:    #b04848;
+  --accent: #6366f1;
+
+  /* ── Type ─────────────────────────────────────────────── */
+  --font-sans: var(--font-plex-sans), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --t-display: 36px;
+  --t-h1:      24px;
+  --t-h2:      18px;
+  --t-h3:      15px;
+  --t-body:    13px;
+  --t-small:   12px;
+  --t-micro:   11px;
+  --t-label:   10.5px;
+
+  --lh-tight: 1.2;
+  --lh-snug:  1.45;
+  --lh-body:  1.6;
+
+  /* ── Spacing ──────────────────────────────────────────── */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 10px;
+  --s-4: 14px;
+  --s-5: 18px;
+  --s-6: 22px;
+  --s-7: 28px;
+  --s-8: 36px;
+
+  /* ── Radii ────────────────────────────────────────────── */
+  --r-sm: 4px;
+  --r-md: 6px;
+  --r-lg: 8px;
+
+  /* ── Elevation ────────────────────────────────────────── */
+  --elev-1: 0 1px 2px rgba(15, 17, 20, 0.04);
+  --elev-2: 0 2px 6px rgba(15, 17, 20, 0.10);
+  --elev-3: 0 8px 24px rgba(15, 17, 20, 0.18), 0 2px 6px rgba(15, 17, 20, 0.10);
+  --elev-4: 0 12px 32px rgba(15, 17, 20, 0.16), 0 2px 8px rgba(15, 17, 20, 0.08);
+
+  /* ── Transition tokens (PLAN.md §3.2) ─────────────────── */
+  --t-fast: 120ms ease-out;
+  --t-med:  150ms ease-out;
+  --t-slow: 400ms ease-out;
+
+  /* ── Polish layer: numerals (PLAN.md §3.2 → tabular nums) ─ */
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Base reset + smoothing ──────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--t-body);
+  line-height: var(--lh-body);
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* ── Type primitives ─────────────────────────────────────── */
+h1, .h1 { font-size: var(--t-h1); font-weight: 600; letter-spacing: -0.01em;  line-height: var(--lh-tight); margin: 0; }
+h2, .h2 { font-size: var(--t-h2); font-weight: 600; letter-spacing: -0.005em; line-height: var(--lh-tight); margin: 0; }
+h3, .h3 { font-size: var(--t-h3); font-weight: 600; line-height: var(--lh-snug);  margin: 0; }
+p,  .p  { font-size: var(--t-body); font-weight: 400; line-height: var(--lh-body); margin: 0; }
+
+.label {
+  font-size: var(--t-label);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum" 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.pos { color: var(--pos); }
+.neg { color: var(--neg); }
+.hr  { border: 0; border-top: 1px solid var(--hairline); margin: 0; }
+.hr2 { border: 0; border-top: 1px solid var(--hairline-strong); margin: 0; }
+
+/* ── Code badge (Plex Reorg signature element) ───────────── */
+.code-badge {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 2px 7px;
+  border-radius: var(--r-sm);
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.code-badge--team { color: var(--c-team); background: var(--c-team-bg); }
+.code-badge--dim  { color: var(--ink-muted); background: transparent; }
+
+/* ── First-load stagger (PLAN.md §3.4) ───────────────────── */
+@keyframes stagger-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.stagger {
+  opacity: 0;
+  animation: stagger-in 400ms ease-out forwards;
+}
+.stagger-1 { animation-delay: 100ms; }
+.stagger-2 { animation-delay: 200ms; }
+.stagger-3 { animation-delay: 300ms; }
+.stagger-4 { animation-delay: 400ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .stagger {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* ── Microcopy: text-wrap polish (PLAN.md §3.2) ──────────── */
+.balance { text-wrap: balance; }
+.pretty  { text-wrap: pretty; }

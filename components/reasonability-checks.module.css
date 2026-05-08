@@ -1,0 +1,126 @@
+.container {
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-lg);
+  padding: var(--s-5) var(--s-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-4);
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: var(--s-3);
+}
+
+.sub {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+  font-feature-settings: "tnum" 1;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+}
+
+.headRow {
+  border-bottom: 1px solid var(--hairline-strong);
+  padding-bottom: 4px;
+  margin-bottom: 2px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.2fr)
+    minmax(0, 0.55fr)
+    minmax(0, 0.7fr)
+    minmax(0, 0.55fr)
+    minmax(0, 0.65fr)
+    minmax(0, 2.0fr);
+  align-items: baseline;
+  gap: var(--s-3);
+  padding: 6px var(--s-2);
+  border-radius: var(--r-sm);
+  transition-property: background-color;
+  transition-duration: 120ms;
+  transition-timing-function: ease-out;
+}
+
+.row:hover {
+  background: var(--surface);
+}
+
+.headRow,
+.headRow:hover {
+  background: transparent;
+}
+
+.cellOffice {
+  font-size: var(--t-body);
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.cellNum {
+  font-size: var(--t-body);
+  text-align: right;
+  color: var(--ink);
+  font-feature-settings: "tnum" 1;
+  font-variant-numeric: tabular-nums;
+  /* Interruptible color transition so the at-target highlight fades smoothly
+   * as the user drags the density slider through the threshold. */
+  transition-property: color;
+  transition-duration: 120ms;
+  transition-timing-function: ease-out;
+}
+
+.headRow .cellNum,
+.headRow .cellOffice,
+.headRow .cellNotes {
+  color: var(--ink-muted);
+}
+
+.cellBelowThreshold {
+  color: var(--pos);
+  font-weight: 500;
+}
+
+.totalRow {
+  border-top: 1px solid var(--hairline-strong);
+  margin-top: 4px;
+  padding-top: 8px;
+}
+
+.totalRow:hover {
+  background: transparent;
+}
+
+.totalRow .cellOffice,
+.totalRow .cellNum {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.cellNotes {
+  font-size: var(--t-small);
+  color: var(--ink-muted);
+  text-wrap: pretty;
+  line-height: var(--lh-snug);
+}
+
+.note {
+  font-size: var(--t-micro);
+  color: var(--ink-faint);
+  margin: 0;
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--hairline);
+  text-wrap: pretty;
+}
