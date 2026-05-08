@@ -65,6 +65,17 @@ export function ReasonabilityChecks({ current }: { current: Scenario }) {
           <span className={styles.cellOffice} role="cell">Total / blended</span>
           <span className={`mono ${styles.cellNum}`} role="cell">
             {fmtInteger(totalHC)}
+            <span
+              className={styles.footnoteMarker}
+              tabIndex={0}
+              role="note"
+              aria-label="Footnote: weighted average throughout the year"
+            >
+              <span className={styles.footnoteNumber}>1</span>
+              <span className={styles.footnoteTooltip} aria-hidden="true">
+                Weighted average throughout the year
+              </span>
+            </span>
           </span>
           <span className={`mono ${styles.cellNum}`} role="cell">
             {fmtInteger(totalSqft)}
